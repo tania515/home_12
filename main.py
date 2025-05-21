@@ -32,7 +32,7 @@ with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file_1:
         file.writelines("Файл созднан \n")
         file.writelines("File is created \n")
     file_1.writelines(f'файл data1.txt создан \n')
-    with open('./project_root/data/row/data2.txt','w', encoding = 'Windows-1251') as file:
+    with open('./project_root/data/row/data2.txt','w', encoding = 'CP1251') as file:
         file.writelines("Файл созднан \n")
         file.writelines("File is created \n")
     file_1.writelines(f'файл data2.txt создан \n')

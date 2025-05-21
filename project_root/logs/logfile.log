@@ -1,13 +1,4 @@
-Файл logfile.txt создан 
-Папка создана ./project_root. 
-Папка создана ./project_root/data/row. 
-Папка создана ./project_root/data/processed. 
-Папка создана ./project_root/logs. 
-Папка создана ./project_root/backups. 
-Папка создана ./project_root/output. 
-Путь ./project_root существует. 
-Путь ./project_root/data/row существует. 
-Путь ./project_root/data/processed существует. 
-Путь ./project_root/logs существует. 
-Путь ./project_root/backups существует. 
-Путь ./project_root/output существует. 
+файл data1.txt создан 
+файл data2.txt создан 
+файл data1.txt создан 
+файл data2.txt создан 

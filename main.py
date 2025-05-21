@@ -25,5 +25,15 @@ with open('logfile.log','a', encoding = 'utf-8') as file:
     file.writelines(do_if_exist("./project_root/backups"))
     file.writelines(do_if_exist("./project_root/output"))
 
-shutil.move('./logfile.log', "./project_root/logs")    
+#shutil.move('./logfile.log', "./project_root/logs")    
 
+with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file_1:
+    with open('./project_root/data/row/data1.txt','w', encoding = 'utf-8') as file:
+        file.writelines("Файл созднан \n")
+        file.writelines("File is created \n")
+    file_1.writelines(f'файл data1.txt создан \n')
+    with open('./project_root/data/row/data2.txt','w', encoding = 'Windows-1251') as file:
+        file.writelines("Файл созднан \n")
+        file.writelines("File is created \n")
+    file_1.writelines(f'файл data2.txt создан \n')
+    

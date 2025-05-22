@@ -2,6 +2,7 @@ import os
 import shutil
 import time
 import chardet
+import json
 
 
 def time_file(path: str): 
@@ -41,7 +42,7 @@ with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file:
     file.writelines(do_if_exist("./project_root/output"))
     file.writelines(time_file(path))
 
-#shutil.move('./logfile.log', "./project_root/logs")    
+ 
 
 with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file_1:
     with open('./project_root/data/row/data1.txt','w', encoding = 'utf-8') as file:
@@ -56,14 +57,25 @@ with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file_1:
     file_1.writelines(time_file(path))
     
 files_and_dirs = os.listdir('./project_root/data/row')
+dict_json = {}
 for file in files_and_dirs:    
-    #shutil.copy(f'./project_root/data/row/{file}',f'./project_root/data/processed{file}_processed')
+        #shutil.copy(f'./project_root/data/row/{file}',f'./project_root/data/processed{file}_processed')
+    d1 = {}
     with open(f'./project_root/data/row/{file}', 'rb') as fl:
         lines = fl.readlines()
         result = chardet.detect(lines[0])
         encoding = result['encoding']
-        with open(f'./project_root/data/processed/{file}_processed','w', encoding = encoding) as file_2:
+        name, ext = os.path.splitext(file)  # Разделяем имя и расширение
+        new_filename = f"{name}_processed{ext}"
+        with open(f'./project_root/data/processed/{new_filename}','w', encoding = encoding) as file_2:
             for line in lines:                
-                file_2.writelines(line.decode(encoding).rstrip('\n'))
-
-        
+                file_2.writelines(line.decode(encoding).rstrip('\n').swapcase())
+    
+    
+        d1 = {"Имя файла": file, "Строки": lines, "Новое имя файла": new_filename, \
+                  "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}')}
+        dict_json.update({file: d1})
+print(dict_json)
+json.dump(dict_json)
+    
+            

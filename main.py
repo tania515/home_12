@@ -75,7 +75,8 @@ for file in files_and_dirs:
             file_2.write(data_new)   
     
             d1 = {"Имя файла": file, "Строки": data.decode(encoding), "Новое имя файла": new_filename, "Новые строки": data_new, \
-                  "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}')}
+                   "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}'), \
+                      "Размер в байтах": os.path.getsize(f'./project_root/data/processed/{new_filename}')}
             dict_json.update({file: d1})
 print(dict_json)
 with open('./project_root/output/processed_data.json','w',encoding = 'utf-8') as file:

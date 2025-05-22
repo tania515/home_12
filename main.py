@@ -62,20 +62,24 @@ for file in files_and_dirs:
         #shutil.copy(f'./project_root/data/row/{file}',f'./project_root/data/processed{file}_processed')
     d1 = {}
     with open(f'./project_root/data/row/{file}', 'rb') as fl:
-        lines = fl.readlines()
-        result = chardet.detect(lines[0])
+        data = fl.read()
+        result = chardet.detect(data)
         encoding = result['encoding']
         name, ext = os.path.splitext(file)  # Разделяем имя и расширение
         new_filename = f"{name}_processed{ext}"
         with open(f'./project_root/data/processed/{new_filename}','w', encoding = encoding) as file_2:
-            for line in lines:                
-                file_2.writelines(line.decode(encoding).rstrip('\n').swapcase())
+            decoded_data = data.decode(encoding)
+            processed_data = decoded_data.swapcase()
+            data_new = '\n'.join(' '.join(line.split()) for line in processed_data.splitlines())
+                    
+            file_2.write(data_new)   
     
-    
-        d1 = {"Имя файла": file, "Строки": lines, "Новое имя файла": new_filename, \
+            d1 = {"Имя файла": file, "Строки": data.decode(encoding), "Новое имя файла": new_filename, "Новые строки": data_new, \
                   "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}')}
-        dict_json.update({file: d1})
+            dict_json.update({file: d1})
 print(dict_json)
-json.dump(dict_json)
+with open('./project_root/output/processed_data.json','w',encoding = 'utf-8') as file:
+    json.dump(dict_json, file, ensure_ascii=False)
+
     
             

@@ -2,7 +2,7 @@
 from .part_1 import do_project_root, do_project, do_files, time_file
 from .part_2 import task_2
 from .part_3 import task_3_1, task_3_2
-from .part_4 import FileInfo
+from .part_4_1 import FileInfo
 from .part_4_2 import validate_json
 
 

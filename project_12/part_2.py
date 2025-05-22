@@ -1,7 +1,7 @@
 import os
 import chardet
 import json
-from datetime import datetime
+#from datetime import datetime
 from .part_1 import time_file
     
 
@@ -28,6 +28,6 @@ def task_2(files_and_dirs: str):
                     "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}'), \
                         "Размер в байтах": os.path.getsize(f'./project_root/data/processed/{new_filename}')}
                 dict_json.update({file: d1})
-    print(dict_json)
+    #print(dict_json)
     with open('./project_root/output/processed_data.json','w',encoding = 'utf-8') as file:
         json.dump(dict_json, file, ensure_ascii=False)

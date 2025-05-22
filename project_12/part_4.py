@@ -1,5 +1,3 @@
-import chardet
-
 class FileInfo:
     def __init__(self, file_name, file_path, file_size, file_time):
         self.__file_name = file_name
@@ -8,7 +6,7 @@ class FileInfo:
         self.__file_time = file_time
         
     def __str__(self):
-        return f'Имя файла {self.__file_name} Путь к файлу {self.__file_path} \
+        return f' Это объект: Имя файла {self.__file_name} Путь к файлу {self.__file_path} \
             Размер файла  {self.__file_size} Модификация в {self.__file_time} '
     
     
@@ -19,3 +17,4 @@ class FileInfo:
             "Размер файла": self.__file_size,
             "Модификация в": self.__file_time
         }
+ 

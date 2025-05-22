@@ -1,5 +1,6 @@
 from project_12 import *
 import os
+import json
 
 # task 1
 path = './project_root/logs/logfile.log'
@@ -11,7 +12,7 @@ do_files(path)
 files_and_dirs = os.listdir('./project_root/data/row')
 task_2(files_and_dirs)
 
-# tast 3
+# task 3
 
 data_dir = './project_root/data/'
 backups_dir = './project_root/backups/'
@@ -19,6 +20,26 @@ data_dir_= "./project_root/data_/"
 backup_path = task_3_1(data_dir, backups_dir)
 task_3_2(data_dir_, backup_path)
 
+
+# task 4
+path = './project_root/data/processed/'
+files = os.listdir(path)
+
+dict_json = {}
+for file in files:  
+    file_name = file
+    absolute_path = os.path.abspath(os.path.join(path, file)) 
+    file_size = os.path.getsize(os.path.join(path, file))
+    file_time = time_file(os.path.join(path, file))
+    d1 = FileInfo(file_name, absolute_path, file_size, file_time)
+    print(d1)
+    dict_json.update({file: d1.to_dict()})
+    
+
+with open('./project_root/output/FileInfo.json','w',encoding = 'utf-8') as file:
+    json.dump(dict_json, file, ensure_ascii=False)
+        
+        
 # import os
 # import shutil
 # import time

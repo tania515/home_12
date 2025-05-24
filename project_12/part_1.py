@@ -15,23 +15,22 @@ def do_if_exist (path: str):
         os.makedirs(path)
         return f'Папка создана {path}. '
 
-def creat_if_exist(path : str):
+def creat_if_not_exist(path : str):    #  !!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
     if  not os.path.exists(path):
-        file = open('./project_root/logs/logfile.log','w', encoding = 'utf-8')
-        file.writelines('Файл logfile.txt создан. ')
+       ## file = open('./project_root/logs/logfile.log','w', encoding = 'utf-8')
+        file = open(path,'w', encoding = 'utf-8')
+        file.writelines(f'Файл {path} создан. ')
         file.writelines(time_file(path))
         file.close() 
     
  
 def do_project_root():
-    path = './project_root/logs/logfile.log' 
     do_if_exist("./project_root/logs")
-    creat_if_exist(path)
+    creat_if_not_exist('./project_root/logs/logfile.log')
     
-def do_project(path: str):
-     
+def do_project(path: str):    
     do_if_exist("./project_root/logs")
-    creat_if_exist(path)
+    creat_if_not_exist(path)
 
     with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file:
         file.writelines(do_if_exist("./project_root"))
@@ -49,7 +48,7 @@ def do_project(path: str):
 
 def do_files(path: str): 
     
-    with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file_1:
+    with open(path,'a', encoding = 'utf-8') as file_1:
          with open('./project_root/data/row/data1.txt','w', encoding = 'utf-8') as file:
             file.writelines("Файл созднан \n")
             file.writelines("File is created \n")

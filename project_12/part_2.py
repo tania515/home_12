@@ -2,7 +2,7 @@ import os
 import chardet
 import json
 #from datetime import datetime
-from .part_1 import time_file
+from .part_1 import time_file, log
     
 
 def task_2(files_and_dirs: str):
@@ -22,7 +22,8 @@ def task_2(files_and_dirs: str):
                 processed_data = decoded_data.swapcase()
                 data_new = '\n'.join(' '.join(line.split()) for line in processed_data.splitlines())
                         
-                file_2.write(data_new)   
+                file_2.write(data_new)  
+                log('./project_root/logs/logfile.log', f'Создан файл ./project_root/data/processed/{new_filename},  {time_file(f"./project_root/data/processed/{new_filename}")}') 
         
                 d1 = {"Имя файла": file, "Строки": data.decode(encoding), "Новое имя файла": new_filename, "Новые строки": data_new, \
                     "Дата последнего изменения файла": time_file(f'./project_root/data/processed/{new_filename}'), \
@@ -31,3 +32,4 @@ def task_2(files_and_dirs: str):
     #print(dict_json)
     with open('./project_root/output/processed_data.json','w',encoding = 'utf-8') as file:
         json.dump(dict_json, file, ensure_ascii=False)
+    log('./project_root/logs/logfile.log', "Сериализация в json выполнена \n")

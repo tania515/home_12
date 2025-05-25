@@ -39,20 +39,6 @@ FILE_INFO_SCHEMA = {
   }
 }
 
-# FILE_INFO_SCHEMA = {
-#     "type": "object",
-#     "patternProperties": {
-#          "type": "object",
-#          "properties": {
-#                 "name": {"type": "string"},
-#                 "path": {"type": "string"},
-#                 "size": {"type": "integer"},
-#                 "time": {"type": "string", "format": "date-time"}
-#             },
-#             "required": ["name", "path", "size", "time"],
-#             "additionalProperties": False
-#         }
-#     }
 
 def validate_json(json_file):
     """

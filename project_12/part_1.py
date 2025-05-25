@@ -1,50 +1,51 @@
 import os
 import time
 
-def time_file(path: str): 
+def time_file(path: str):        # время 
     modification_time = os.path.getmtime(path)
     readable_time = time.ctime(modification_time)
     return f'Время: {readable_time} \n'
    
     
-def do_if_exist (path: str):
+def do_if_not_exist (path: str):    # создание папок
     if os.path.exists(path):
-        return f'Попытка созднания, путь {path} существует. '
+        return f'Попытка созднания, путь {path} существует. \n'
         
     else:
         os.makedirs(path)
-        return f'Папка создана {path}. '
+        return f'Папка создана {path}. {time_file(path)}'
 
-def creat_if_not_exist(path : str):    #  !!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-    if  not os.path.exists(path):
-       ## file = open('./project_root/logs/logfile.log','w', encoding = 'utf-8')
+def creat_if_not_exist(path : str):    # создание  файла
+    dir_path = os.path.dirname(path)
+    do_if_not_exist(dir_path)
+    if  not os.path.exists(path):  
         file = open(path,'w', encoding = 'utf-8')
         file.writelines(f'Файл {path} создан. ')
         file.writelines(time_file(path))
         file.close() 
+    return f'Файл {path} создан. {time_file(path)}'
     
- 
-def do_project_root():
-    do_if_exist("./project_root/logs")
-    creat_if_not_exist('./project_root/logs/logfile.log')
+def log (path: str, mess: str):    # создание  файла
+    try:
+        with open(path,'a', encoding = 'utf-8') as file:
+            file.writelines(mess)
+        return True
+    except FileNotFoundError:
+        return(creat_if_not_exist(path))
+      
+
     
 def do_project(path: str):    
-    do_if_exist("./project_root/logs")
-    creat_if_not_exist(path)
 
-    with open('./project_root/logs/logfile.log','a', encoding = 'utf-8') as file:
-        file.writelines(do_if_exist("./project_root"))
-        file.writelines(time_file(path))
-        file.writelines(do_if_exist("./project_root/data/row"))
-        file.writelines(time_file(path))
-        file.writelines(do_if_exist("./project_root/data/processed"))
-        file.writelines(time_file(path))
-        file.writelines(do_if_exist("./project_root/logs"))
-        file.writelines(time_file(path))
-        file.writelines(do_if_exist("./project_root/backups"))
-        file.writelines(time_file(path))
-        file.writelines(do_if_exist("./project_root/output"))
-        file.writelines(time_file(path))
+    with open(path,'a', encoding = 'utf-8') as file:
+        path = "./project_root"
+        file.writelines(do_if_not_exist("./project_root"))
+        file.writelines(do_if_not_exist("./project_root/data/row"))
+        file.writelines(do_if_not_exist("./project_root/data/processed"))
+        file.writelines(do_if_not_exist("./project_root/logs"))
+        file.writelines(do_if_not_exist("./project_root/backups"))
+        file.writelines(do_if_not_exist("./project_root/output"))
+     
 
 def do_files(path: str): 
     

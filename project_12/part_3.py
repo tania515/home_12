@@ -2,10 +2,7 @@ import os
 import zipfile
 import hashlib
 from datetime import datetime
-
-# data_dir = './project_root/data/'
-# backups_dir = './project_root/backups/'
-# data_dir_= "./project_root/data_/"
+from .part_1 import log
     
 def task_3_1(data_dir, backups_dir):
     
@@ -26,7 +23,8 @@ def task_3_1(data_dir, backups_dir):
                 arcname = os.path.relpath(file_path, start=data_dir)
                 backup_zip.write(file_path, arcname)
         
-    print(f'Резервная копия успешно создана: {backup_path}')
+    log('./project_root/logs/logfile.log',f'Резервная копия успешно создана: {backup_path} \n')
+    
     return backup_path
         
    
@@ -39,7 +37,8 @@ def task_3_2(data_dir_, backup_path):
             
                 # Получаем список файлов в архиве
         file_list = backup_zip.namelist()
-        print(f"Найдено {len(file_list)} файлов для восстановления")
+       # print(f"Найдено {len(file_list)} файлов для восстановления")
+        log('./project_root/logs/logfile.log',f"Найдено {len(file_list)} файлов для восстановления \n")
                 
                 # Восстанавливаем файлы
         for file in file_list:
@@ -57,5 +56,6 @@ def task_3_2(data_dir_, backup_path):
                     if file_hash != original_hash:
                         raise ValueError(f"Файл {file} поврежден при восстановлении")
                 
-                print(f"Успешно восстановлено {len(file_list)} файлов в {data_dir_}")
+               # print(f"Успешно восстановлено {len(file_list)} файлов в {data_dir_}")
+                log('./project_root/logs/logfile.log', f"Успешно восстановлено {len(file_list)} файлов в {data_dir_} \n")
             

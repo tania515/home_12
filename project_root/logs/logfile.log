@@ -1,17 +1,49 @@
-Файл ./project_root/logs/logfile.log создан. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root существует. Время: Sat May 24 14:16:40 2025 
-Папка создана ./project_root/data/row. Время: Sat May 24 14:16:40 2025 
-Папка создана ./project_root/data/processed. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/logs существует. Время: Sat May 24 14:16:40 2025 
-Папка создана ./project_root/backups. Время: Sat May 24 14:16:40 2025 
-Папка создана ./project_root/output. Время: Sat May 24 14:16:40 2025 
-файл data1.txt создан. Время: Sat May 24 14:16:40 2025 
-файл data2.txt создан. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root существует. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/data/row существует. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/data/processed существует. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/logs существует. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/backups существует. Время: Sat May 24 14:16:40 2025 
-Попытка созднания, путь ./project_root/output существует. Время: Sat May 24 14:16:40 2025 
-файл data1.txt создан. Время: Sat May 24 14:33:27 2025 
-файл data2.txt создан. Время: Sat May 24 14:33:27 2025 
+Файл ./project_root/logs/logfile.log создан. Время: Sun May 25 21:58:31 2025 
+Попытка созднания, путь ./project_root существует. 
+Папка создана ./project_root/data/row. Время: Sun May 25 21:58:31 2025 
+Папка создана ./project_root/data/processed. Время: Sun May 25 21:58:31 2025 
+Попытка созднания, путь ./project_root/logs существует. 
+Папка создана ./project_root/backups. Время: Sun May 25 21:58:31 2025 
+Папка создана ./project_root/output. Время: Sun May 25 21:58:31 2025 
+файл data1.txt создан. Время: Sun May 25 21:58:31 2025 
+файл data2.txt создан. Время: Sun May 25 21:58:31 2025 
+Создан файл ./project_root/data/processed/data1_processed.txt,  Время: Sun May 25 21:58:31 2025 
+Создан файл ./project_root/data/processed/data2_processed.txt,  Время: Sun May 25 21:58:31 2025 
+Сериализация в json выполнена 
+Резервная копия успешно создана: ./project_root/backups/backup_20250525.zip 
+Найдено 4 файлов для восстановления 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Создан экземпляр класса  Это объект: Имя файла data1_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data1_processed.txt             Размер файла  40 Модификация в Время: Sun May 25 21:58:31 2025 
+ Создан экземпляр класса  Это объект: Имя файла data2_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data2_processed.txt             Размер файла  29 Модификация в Время: Sun May 25 21:58:31 2025 
+ Сериализованы экземпляры классов в файл ./project_root/output/FileInfo.json 
+Десериализованы экземпляры классов из файла ./project_root/output/FileInfo.json : 
+ Это объект: Имя файла data1_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data1_processed.txt             Размер файла  40 Модификация в Время: Sun May 25 21:58:31 2025 
+  Это объект: Имя файла data2_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data2_processed.txt             Размер файла  29 Модификация в Время: Sun May 25 21:58:31 2025 
+ Валидация согласно схеме ок 
+Попытка созднания, путь ./project_root существует. 
+Попытка созднания, путь ./project_root/data/row существует. 
+Попытка созднания, путь ./project_root/data/processed существует. 
+Попытка созднания, путь ./project_root/logs существует. 
+Попытка созднания, путь ./project_root/backups существует. 
+Попытка созднания, путь ./project_root/output существует. 
+файл data1.txt создан. Время: Sun May 25 21:58:53 2025 
+файл data2.txt создан. Время: Sun May 25 21:58:53 2025 
+Создан файл ./project_root/data/processed/data1_processed.txt,  Время: Sun May 25 21:58:53 2025 
+Создан файл ./project_root/data/processed/data2_processed.txt,  Время: Sun May 25 21:58:53 2025 
+Сериализация в json выполнена 
+Резервная копия успешно создана: ./project_root/backups/backup_20250525.zip 
+Найдено 4 файлов для восстановления 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Успешно восстановлено 4 файлов в ./project_root/data_/ 
+Создан экземпляр класса  Это объект: Имя файла data1_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data1_processed.txt             Размер файла  40 Модификация в Время: Sun May 25 21:58:53 2025 
+ Создан экземпляр класса  Это объект: Имя файла data2_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data2_processed.txt             Размер файла  29 Модификация в Время: Sun May 25 21:58:53 2025 
+ Сериализованы экземпляры классов в файл ./project_root/output/FileInfo.json 
+Десериализованы экземпляры классов из файла ./project_root/output/FileInfo.json : 
+ Это объект: Имя файла data1_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data1_processed.txt             Размер файла  40 Модификация в Время: Sun May 25 21:58:53 2025 
+  Это объект: Имя файла data2_processed.txt Путь к файлу E:\УИИ\Python-разработчик\12_Работа с файлами, с операционной системой и путями. Кодировки, сериализация данных, json\home_12\project_root\data\processed\data2_processed.txt             Размер файла  29 Модификация в Время: Sun May 25 21:58:53 2025 
+ Валидация согласно схеме ок 
